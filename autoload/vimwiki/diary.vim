@@ -435,14 +435,6 @@ function! vimwiki#diary#generate_diary_section() abort
           let topcap = captions['top']
           let link_tpl = vimwiki#vars#get_global('WikiLinkTemplate2')
 
-          if vimwiki#vars#get_wikilocal('syntax') ==# 'markdown'
-            let link_tpl = vimwiki#vars#get_syntaxlocal('Weblink1Template')
-
-            if empty(topcap) " When using markdown syntax, we should ensure we always have a link description.
-              let topcap = fl
-            endif
-          endif
-
           if empty(topcap)
             let top_link_tpl = vimwiki#vars#get_global('WikiLinkTemplate1')
           else
